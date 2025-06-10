@@ -1,11 +1,9 @@
-// filepath: e:\download\material-ui-7.1.1\material-ui-7.1.1\docs\data\material\getting-started\templates\meow\src\App.js
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AppTheme from './shared-theme/AppTheme';
 import Blog from './Blog';
 import SignIn from './SignIn';
 import SignUp from './SignUp'; // Import the SignUp component
-import AppAppBar from './components/AppAppBar'; // Assuming you want the app bar on all pages
+//import AppAppBar from './components/AppAppBar'; 
 
 function App() {
   return (
