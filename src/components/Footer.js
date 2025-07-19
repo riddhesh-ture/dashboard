@@ -11,15 +11,16 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import XIcon from '@mui/icons-material/X';
 import SitemarkIcon from './SitemarkIcon';
 
 function Copyright() {
   return (
     <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
       {'Copyright © '}
-      <Link color="text.secondary" href="https://mui.com/">
-        Sitemark
+      <Link color="text.secondary" href="https://riddheshture.me">
+        riddheshture
       </Link>
       &nbsp;
       {new Date().getFullYear()}
@@ -106,23 +107,23 @@ export default function Footer() {
             }}
           >
             <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-              Product
+              Projects
             </Typography>
-            <Link color="text.secondary" variant="body2" href="#">
-              Features
+            <Link color="text.secondary" variant="body2" href="https://asep1.riddheshture.me">
+              ASEP 1
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Testimonials
+            <Link color="text.secondary" variant="body2" href="https://asep2.riddheshture.me">
+              ASEP 2
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
-              Highlights
+            <Link color="text.secondary" variant="body2" href="https://cute-cal.netlify.app">
+              Cute Cal
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            {/* <Link color="text.secondary" variant="body2" href="#">
               Pricing
             </Link>
             <Link color="text.secondary" variant="body2" href="#">
               FAQs
-            </Link>
+            </Link> */}
           </Box>
           <Box
             sx={{
@@ -131,18 +132,18 @@ export default function Footer() {
               gap: 1,
             }}
           >
-            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
-              Company
+            {/* <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+              About Me
             </Typography>
             <Link color="text.secondary" variant="body2" href="#">
-              About us
+              LinkedIn
             </Link>
             <Link color="text.secondary" variant="body2" href="#">
-              Careers
-            </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+              GitHub
+            </Link> */}
+            {/* <Link color="text.secondary" variant="body2" href="#">
               Press
-            </Link>
+            </Link> */}
           </Box>
           <Box
             sx={{
@@ -151,7 +152,7 @@ export default function Footer() {
               gap: 1,
             }}
           >
-            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+            {/* <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
               Legal
             </Typography>
             <Link color="text.secondary" variant="body2" href="#">
@@ -160,9 +161,9 @@ export default function Footer() {
             <Link color="text.secondary" variant="body2" href="#">
               Privacy
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="text.secondary" variant="body2" href="mailto:riddheshture@proton.me">
               Contact
-            </Link>
+            </Link> */}
           </Box>
         </Box>
         <Box
@@ -195,8 +196,8 @@ export default function Footer() {
           >
             <IconButton
               color="inherit"
-              size="small"
-              href="https://github.com/mui"
+              size="medium"
+              href="https://github.com/terepapakamaal"
               aria-label="GitHub"
               sx={{ alignSelf: 'center' }}
             >
@@ -204,17 +205,26 @@ export default function Footer() {
             </IconButton>
             <IconButton
               color="inherit"
-              size="small"
-              href="https://x.com/MaterialUI"
-              aria-label="X"
+              size="medium"
+              href="https://instagram.com/terepapakamaal"
+              aria-label="Instagram"
               sx={{ alignSelf: 'center' }}
             >
-              <TwitterIcon />
+              <InstagramIcon />
             </IconButton>
             <IconButton
               color="inherit"
-              size="small"
-              href="https://www.linkedin.com/company/mui/"
+              size="medium"
+              href="https://x.com/terepapakamaal"
+              aria-label="X"
+              sx={{ alignSelf: 'center' }}
+            >
+              <XIcon />
+            </IconButton>
+            <IconButton
+              color="inherit"
+              size="medium"
+              href="https://www.linkedin.com/in/riddheshture"
               aria-label="LinkedIn"
               sx={{ alignSelf: 'center' }}
             >
