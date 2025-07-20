@@ -198,6 +198,7 @@ export default function Footer() {
               color="inherit"
               size="medium"
               href="https://github.com/terepapakamaal"
+              target='_blank'
               aria-label="GitHub"
               sx={{ alignSelf: 'center' }}
             >
@@ -206,7 +207,8 @@ export default function Footer() {
             <IconButton
               color="inherit"
               size="medium"
-              href="https://instagram.com/terepapakamaal"
+              href="https://instagram.com/riddhesh.ture"
+              target='_blank'
               aria-label="Instagram"
               sx={{ alignSelf: 'center' }}
             >
@@ -215,7 +217,8 @@ export default function Footer() {
             <IconButton
               color="inherit"
               size="medium"
-              href="https://x.com/terepapakamaal"
+              href="https://x.com/riddhesh_ture"
+              target='_blank'
               aria-label="X"
               sx={{ alignSelf: 'center' }}
             >
@@ -225,6 +228,7 @@ export default function Footer() {
               color="inherit"
               size="medium"
               href="https://www.linkedin.com/in/riddheshture"
+              target='_blank'
               aria-label="LinkedIn"
               sx={{ alignSelf: 'center' }}
             >

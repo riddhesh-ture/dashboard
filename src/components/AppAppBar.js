@@ -12,8 +12,11 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ColorModeIconDropdown from '../shared-theme/ColorModeIconDropdown';
-import Sitemark from './SitemarkIcon';
-import { Link as RouterLink } from 'react-router-dom'; // Import RouterLink
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
+import pfp from './pfp.png'; // Import the image path
+import { SitemarkIcon as SiteLogoIcon } from './CustomIcons-up'; // The SVG logo
+import { Link as RouterLink, useLocation } from 'react-router-dom'; // Import RouterLink and useLocation
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -33,10 +36,13 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function AppAppBar() {
   const [open, setOpen] = React.useState(false);
+  const location = useLocation();
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  const showProfileIcon = location.pathname === '/' || location.pathname === '/signup';
 
   return (
     <AppBar
@@ -52,7 +58,29 @@ export default function AppAppBar() {
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-            <Sitemark />
+            <Box
+              component={RouterLink}
+              to="/"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                textDecoration: 'none',
+                mr: 2,
+              }}
+            >
+              <Avatar alt="Riddhesh Ture" src={pfp} sx={{ width: 32, height: 32 }} />
+              <Typography
+                variant="body1"
+                sx={{
+                  display: { xs: 'none', md: 'block' },
+                  color: 'text.primary',
+                  fontWeight: 'bold',
+                  ml: 1.5,
+                }}
+              >
+                Riddhesh
+              </Typography>
+            </Box>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <Button
                 variant="text"

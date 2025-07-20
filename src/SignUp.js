@@ -39,16 +39,17 @@ const Card = styled(MuiCard)(({ theme }) => ({
 }));
 
 const SignUpContainer = styled(Stack)(({ theme }) => ({
-  height: 'calc((1 - var(--template-frame-height, 0)) * 100dvh)',
-  minHeight: '100%',
+  minHeight: '100dvh',
   padding: theme.spacing(2),
+  paddingTop: theme.spacing(12), // Add padding to push content below AppAppBar
   [theme.breakpoints.up('sm')]: {
     padding: theme.spacing(4),
+    paddingTop: theme.spacing(12), // Add padding to push content below AppAppBar
   },
   '&::before': {
     content: '""',
     display: 'block',
-    position: 'absolute',
+    position: 'fixed', // Changed from 'absolute' to 'fixed'
     zIndex: -1,
     inset: 0,
     backgroundImage:
@@ -109,7 +110,7 @@ export default function SignUp(props) {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent default form submission
     if (!validateInputs()) { // Validate inputs before logging
-        return;
+      return;
     }
     const data = new FormData(event.currentTarget);
     console.log({
@@ -127,7 +128,6 @@ export default function SignUp(props) {
       <ColorModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }} />
       <SignUpContainer direction="column" justifyContent="space-between">
         <Card variant="outlined">
-          <SitemarkIcon />
           <Typography
             component="h1"
             variant="h4"
@@ -195,7 +195,7 @@ export default function SignUp(props) {
               type="submit"
               fullWidth
               variant="contained"
-              // onClick={validateInputs} // handleSubmit will call validateInputs
+            // onClick={validateInputs} // handleSubmit will call validateInputs
             >
               Sign up
             </Button>

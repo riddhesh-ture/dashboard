@@ -40,16 +40,17 @@ const Card = styled(MuiCard)(({ theme }) => ({
 }));
 
 const SignInContainer = styled(Stack)(({ theme }) => ({
-  height: 'calc((1 - var(--template-frame-height, 0)) * 100dvh)',
-  minHeight: '100%',
+  minHeight: '100dvh',
   padding: theme.spacing(2),
+  paddingTop: theme.spacing(12), // Add padding to push content below AppAppBar
   [theme.breakpoints.up('sm')]: {
     padding: theme.spacing(4),
+    paddingTop: theme.spacing(12), // Add padding to push content below AppAppBar
   },
   '&::before': {
     content: '""',
     display: 'block',
-    position: 'absolute',
+    position: 'fixed', // Changed from 'absolute' to 'fixed'
     zIndex: -1,
     inset: 0,
     backgroundImage:
@@ -131,7 +132,6 @@ export default function SignIn(props) {
       <SignInContainer direction="column" justifyContent="space-between">
         <ColorModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }} />
         <Card variant="outlined">
-          <SitemarkIcon />
           <Typography
             component="h1"
             variant="h4"
