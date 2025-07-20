@@ -1,4 +1,4 @@
-
+import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
@@ -15,7 +15,7 @@ import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import AppTheme from './shared-theme/AppTheme'; // Corrected path
 import ColorModeSelect from './shared-theme/ColorModeSelect'; // Corrected path
-import { GoogleIcon, FacebookIcon, SitemarkIcon } from './components/CustomIcons-up'; // Assuming CustomIcons-up.js
+import { GoogleIcon, FacebookIcon} from './components/CustomIcons-up'; // Assuming CustomIcons-up.js
 import { Link as RouterLink } from 'react-router-dom'; // Import RouterLink
 
 const Card = styled(MuiCard)(({ theme }) => ({

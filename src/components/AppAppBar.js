@@ -41,7 +41,7 @@ export default function AppAppBar() {
     setOpen(newOpen);
   };
 
-  const showProfileIcon = location.pathname === '/' || location.pathname === '/signup';
+
 
   return (
     <AppBar
