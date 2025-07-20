@@ -14,9 +14,8 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ColorModeIconDropdown from '../shared-theme/ColorModeIconDropdown';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import pfp from './pfp.png'; // Import the image path
-import { SitemarkIcon as SiteLogoIcon } from './CustomIcons-up'; // The SVG logo
-import { Link as RouterLink, useLocation } from 'react-router-dom'; // Import RouterLink and useLocation
+import pfp from './pfp.png';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',

@@ -1,5 +1,5 @@
 import Avatar from '@mui/material/Avatar';
-import pfp from './pfp.png'; // Import the image
+import pfp from './pfp.png'; 
 
 export default function SitemarkIcon() {
   return (
