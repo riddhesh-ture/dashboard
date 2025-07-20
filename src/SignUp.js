@@ -1,5 +1,4 @@
-// filepath: e:\download\material-ui-7.1.1\material-ui-7.1.1\docs\data\material\getting-started\templates\meow\src\SignUp.js
-import * as React from 'react';
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
