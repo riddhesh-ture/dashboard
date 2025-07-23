@@ -1,11 +1,9 @@
-import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import AppTheme from './shared-theme/AppTheme';
 import AppAppBar from './components/AppAppBar';
-import MainContent from './components/MainContent';
-import Latest from './components/Latest';
 import Footer from './components/Footer';
+import Portfolio from './components/Portfolio';
 
 
 export default function Blog(props) {
@@ -18,8 +16,7 @@ export default function Blog(props) {
         component="main"
         sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
       >
-        <MainContent />
-        <Latest />
+      <Portfolio/>
       </Container>
       <Footer />
     </AppTheme>
