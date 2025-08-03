@@ -86,44 +86,20 @@ export default function AppAppBar() {
                 color="info"
                 size="small"
                 component={RouterLink}
-                to="/blog" // Assuming "Features" is part of the blog or another section
+                to="/home"
                 sx={{ minWidth: 0, px: '12px' }}
               >
-                Features
-              </Button>
-              <Button
-                variant="text"
-                color="info"
-                size="small"
-                sx={{ minWidth: 0, px: '12px' }}
-              >
-                Testimonials
-              </Button>
-              <Button
-                variant="text"
-                color="info"
-                size="small"
-                sx={{ minWidth: 0, px: '12px' }}
-              >
-                Highlights
-              </Button>
-              <Button
-                variant="text"
-                color="info"
-                size="small"
-                sx={{ minWidth: 0, px: '12px' }}
-              >
-                Pricing
+                Portfolio
               </Button>
               <Button
                 variant="text"
                 color="info"
                 size="small"
                 component={RouterLink}
-                to="/blog"
+                to="/about"
                 sx={{ minWidth: 0, px: '12px' }}
               >
-                Blog
+                About Me
               </Button>
             </Box>
           </Box>
@@ -180,11 +156,7 @@ export default function AppAppBar() {
                     <CloseRoundedIcon />
                   </IconButton>
                 </Box>
-                <MenuItem component={RouterLink} to="/blog" onClick={toggleDrawer(false)}>Features</MenuItem>
-                <MenuItem onClick={toggleDrawer(false)}>Testimonials</MenuItem>
-                <MenuItem onClick={toggleDrawer(false)}>Highlights</MenuItem>
-                <MenuItem onClick={toggleDrawer(false)}>Pricing</MenuItem>
-                <MenuItem component={RouterLink} to="/blog" onClick={toggleDrawer(false)}>Blog</MenuItem>
+                <MenuItem component={RouterLink} to="/home" onClick={toggleDrawer(false)}>Portfolio</MenuItem>
                 <Divider sx={{ my: 3 }} />
                 <MenuItem onClick={toggleDrawer(false)}>
                   <Button color="primary" variant="contained" fullWidth component={RouterLink} to="/signup">

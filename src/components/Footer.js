@@ -197,7 +197,7 @@ export default function Footer() {
             <IconButton
               color="inherit"
               size="medium"
-              href="https://github.com/terepapakamaal"
+              href="https://github.com/riddhesh-ture"
               target='_blank'
               aria-label="GitHub"
               sx={{ alignSelf: 'center' }}

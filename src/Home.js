@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
 
 
-export default function Blog(props) {
+export default function Home(props) {
   return (
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
