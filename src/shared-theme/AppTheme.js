@@ -40,7 +40,11 @@ function AppTheme(props) {
   if (disableCustomTheme) {
     return <React.Fragment>{children}</React.Fragment>;
   }
-  return <CssVarsProvider theme={theme}>{children}</CssVarsProvider>;
+  return (
+    <CssVarsProvider theme={theme} defaultMode="dark">
+      {children}
+    </CssVarsProvider>
+  );
 }
 
 AppTheme.propTypes = {

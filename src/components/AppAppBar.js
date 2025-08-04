@@ -41,7 +41,12 @@ export default function AppAppBar() {
     setOpen(newOpen);
   };
 
-
+  const scrollToSection = (sectionId) => {
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <AppBar
@@ -86,7 +91,7 @@ export default function AppAppBar() {
                 color="info"
                 size="small"
                 component={RouterLink}
-                to="/home"
+                to="/portfolio"
                 sx={{ minWidth: 0, px: '12px' }}
               >
                 Portfolio
@@ -156,7 +161,8 @@ export default function AppAppBar() {
                     <CloseRoundedIcon />
                   </IconButton>
                 </Box>
-                <MenuItem component={RouterLink} to="/home" onClick={toggleDrawer(false)}>Portfolio</MenuItem>
+                <MenuItem component={RouterLink} to="/about" onClick={toggleDrawer(false)}>About Me</MenuItem>
+                <MenuItem component={RouterLink} to="/portfolio" onClick={toggleDrawer(false)}>Portfolio</MenuItem>
                 <Divider sx={{ my: 3 }} />
                 <MenuItem onClick={toggleDrawer(false)}>
                   <Button color="primary" variant="contained" fullWidth component={RouterLink} to="/signup">

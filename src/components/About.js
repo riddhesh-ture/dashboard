@@ -11,34 +11,37 @@ import AlertTitle from '@mui/material/AlertTitle';
 export default function About(props) {
   return (
     <AppTheme {...props}>
-      <CssBaseline enableColorScheme />
-      <Container
-        maxWidth="lg"
-        component="main"
-        sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
-      >
-        <Alert severity="info">
-          <AlertTitle>Under Construction</AlertTitle>
-          This website is a work in progress. New features and content are being
-          added!
-        </Alert>
-        <Card variant="outlined">
+      <>
+        <CssBaseline enableColorScheme />
+        <Container
+          maxWidth="lg"
+          component="main"
+          sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
+        >
+          <Alert severity="info">
+            <AlertTitle>Under Construction</AlertTitle>
+            This website is a work in progress. New features and content are being
+            added!
+          </Alert>
+          <Card variant="outlined">
             <CardContent>
-                <Typography variant="h5" component="div" gutterBottom>
-                    About Me
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    I'm a second-year CSE student at VIT Pune with a hands-on approach to learning through real-world projects. 
-                    I've built full-stack apps like a privacy-focused spam detection platform and a farmer support site with 
-                    live weather insights. I enjoy working on end-to-end features — from frontend interfaces to backend logic and deployment. 
-                    Recently, I made a small contribution to the open-source LocalSend project, where I added a UI improvement (a button feature), 
-                    and I'm looking forward to contributing more. Outside academics, I like exploring emerging tech, setting up DNS/domains, and 
-                    experimenting with tools like Flutter, React, Firebase, and MySQL.
-                </Typography>
+              <Typography variant="h5" component="div" gutterBottom>
+                About Me
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                A second-year CSE student at VIT Pune focused on building privacy-aware and locally impactful tech tools.
+                Developed “Secure Shield,” a cybersecurity platform to help Indian users detect scam messages, URLs, and files,
+                and “Krishi Mitra,” a Hindi-language app supporting farmers with soil testing, weather updates, and market prices.
+                Built and deployed multiple projects using React, Firebase, and Flutter — with frontend hosting via Netlify and
+                DNS routing handled through Cloudflare. Recently started contributing to open-source and working on mobile-focused
+                solutions and UI clones like a dark-themed calculator.
+              </Typography>
+
             </CardContent>
-        </Card>
-      </Container>
-      <Footer />
+          </Card>
+        </Container>
+        <Footer />
+      </>
     </AppTheme>
   );
 }

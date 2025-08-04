@@ -42,7 +42,6 @@ const projects = [
     description: 'An academic project focused on advanced software engineering principles.',
     link: 'https://asep1.riddheshture.me',
     img: asep1,
-    
   },
   {
     title: 'ASEP 2',
@@ -72,21 +71,22 @@ export default function Portfolio(props) {
           This website is a work in progress. New features and content are being
           added!
         </Alert>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {/* Bio Section */}
-          <Card variant="outlined" sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Avatar alt={bio.name} src={bio.avatar} sx={{ width: 80, height: 80 }} />
-            <Box>
-              <Typography variant="h4" component="h1" gutterBottom>
-                {bio.name}
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                {bio.description}
-              </Typography>
-            </Box>
-          </Card>
 
-          {/* Projects Section */}
+        {/* Bio Section */}
+        <Card variant="outlined" sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Avatar alt={bio.name} src={bio.avatar} sx={{ width: 80, height: 80 }} />
+          <Box>
+            <Typography variant="h4" component="h1" gutterBottom>
+              {bio.name}
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              {bio.description}
+            </Typography>
+          </Box>
+        </Card>
+
+        {/* Projects Section */}
+        <Box id="projects" sx={{ scrollMarginTop: '128px' }}>
           <Typography variant="h2" gutterBottom>
             Projects
           </Typography>
