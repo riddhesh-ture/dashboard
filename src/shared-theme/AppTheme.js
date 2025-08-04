@@ -36,6 +36,7 @@ function AppTheme(props) {
           },
         });
   }, [disableCustomTheme, themeComponents]);
+
   if (disableCustomTheme) {
     return <React.Fragment>{children}</React.Fragment>;
   }
@@ -44,9 +45,6 @@ function AppTheme(props) {
 
 AppTheme.propTypes = {
   children: PropTypes.node,
-  /**
-   * This is for the docs site. You can ignore it or remove it.
-   */
   disableCustomTheme: PropTypes.bool,
   themeComponents: PropTypes.object,
 };

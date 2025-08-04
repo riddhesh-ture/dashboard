@@ -13,7 +13,7 @@ function App() {
         <AppAppBar />
         <Routes>
           <Route path="/" element={<Navigate replace to="/home" />} />
-          <Route path="/home" element={<Portfolio />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About/>} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
