@@ -32,20 +32,25 @@ const SyledCard = styled(Card)(({ theme }) => ({
 
 const bio = {
   name: 'Riddhesh Ture',
-  description: 'I am a passionate software engineer with expertise in building modern web applications. I enjoy working with React, Node.js, and exploring new technologies. This dashboard is a showcase of my work and skills.',
+  description: (
+    <>
+      👨‍💻 Computer Science student passionate about modern web development.<br />
+      🚀 This dashboard highlights projects I’ve built using React, Node.js, and other tools I’m exploring.
+    </>
+  ),
   avatar: pfp
 };
 
 const projects = [
   {
-    title: 'ASEP 1',
-    description: 'An academic project focused on advanced software engineering principles.',
+    title: 'ASEP 1 – Krishi Mitra',
+    description: 'A Hindi-language farming assistant providing soil testing guidance, live weather forecasts, and market price updates.',
     link: 'https://asep1.riddheshture.me',
     img: asep1,
   },
   {
-    title: 'ASEP 2',
-    description: 'A follow-up project demonstrating further skills in software engineering.',
+    title: 'ASEP 2 – Secure Shield',
+    description: 'A cybersecurity tool that checks SMS, URLs, and files for scams using VirusTotal, Google Safe Browsing, and HaveIBeenPwned.',
     link: 'https://asep2.riddheshture.me',
     img: asep2,
   },
@@ -73,7 +78,7 @@ export default function Portfolio(props) {
         </Alert>
 
         {/* Bio Section */}
-        <Card variant="outlined" sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Card id="about-me" variant="outlined" sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2, scrollMarginTop: '128px' }}>
           <Avatar alt={bio.name} src={bio.avatar} sx={{ width: 80, height: 80 }} />
           <Box>
             <Typography variant="h4" component="h1" gutterBottom>
@@ -101,11 +106,20 @@ export default function Portfolio(props) {
                       alt={project.title}
                       sx={{ aspectRatio: '16 / 9' }}
                     />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
+                    <CardContent sx={{ flexGrow: 1, p: 2.5 }}>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        sx={{ fontWeight: 'medium' }}
+                      >
                         {project.title}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ lineHeight: 1.6 }}
+                      >
                         {project.description}
                       </Typography>
                     </CardContent>

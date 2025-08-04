@@ -1,19 +1,15 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import InputLabel from '@mui/material/InputLabel';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import XIcon from '@mui/icons-material/X';
-import SitemarkIcon from './SitemarkIcon';
 
 function Copyright() {
   return (
@@ -31,26 +27,25 @@ function Copyright() {
 export default function Footer() {
   return (
     <React.Fragment>
-      <Divider />
       <Container
         sx={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           gap: { xs: 4, sm: 8 },
-          py: { xs: 8, sm: 10 },
+          py: { xs: 4, sm: 5 },
           textAlign: { sm: 'center', md: 'left' },
         }}
       >
-        <Box
+       {/*   <Box
           sx={{
             display: 'flex',
             flexDirection: { xs: 'column', sm: 'row' },
             width: '100%',
             justifyContent: 'space-between',
           }}
-        >
-          <Box
+        ></Box> */}
+          {/* <Box
             sx={{
               display: 'flex',
               flexDirection: 'column',
@@ -98,15 +93,10 @@ export default function Footer() {
                 </Button>
               </Stack>
             </Box>
-          </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              flexDirection: 'column',
-              gap: 1,
-            }}
-          >
-            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+          </Box> */}
+           
+          
+           {/* <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
               Projects
             </Typography>
             <Link color="text.secondary" variant="body2" href="https://asep1.riddheshture.me">
@@ -118,12 +108,12 @@ export default function Footer() {
             <Link color="text.secondary" variant="body2" href="https://cute-cal.netlify.app">
               Cute Cal
             </Link>
-            {/* <Link color="text.secondary" variant="body2" href="#">
+            <Link color="text.secondary" variant="body2" href="#">
               Pricing
             </Link>
             <Link color="text.secondary" variant="body2" href="#">
               FAQs
-            </Link> */}
+            </Link>
           </Box>
           <Box
             sx={{
@@ -132,7 +122,7 @@ export default function Footer() {
               gap: 1,
             }}
           >
-            {/* <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+             <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
               About Me
             </Typography>
             <Link color="text.secondary" variant="body2" href="#">
@@ -140,10 +130,10 @@ export default function Footer() {
             </Link>
             <Link color="text.secondary" variant="body2" href="#">
               GitHub
-            </Link> */}
-            {/* <Link color="text.secondary" variant="body2" href="#">
+            </Link> 
+             <Link color="text.secondary" variant="body2" href="#">
               Press
-            </Link> */}
+            </Link> 
           </Box>
           <Box
             sx={{
@@ -163,14 +153,14 @@ export default function Footer() {
             </Link>
             <Link color="text.secondary" variant="body2" href="mailto:riddheshture@proton.me">
               Contact
-            </Link> */}
-          </Box>
-        </Box>
+            </Link> 
+          </Box> */}
+        
         <Box
           sx={{
             display: 'flex',
             justifyContent: 'space-between',
-            pt: { xs: 4, sm: 8 },
+            pt: { xs: 4, sm: 4 },
             width: '100%',
             borderTop: '1px solid',
             borderColor: 'divider',
