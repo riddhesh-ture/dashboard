@@ -32,7 +32,7 @@ export default function About(props) {
                 A second-year CSE student at VIT Pune focused on building privacy-aware and locally impactful tech tools.
                 Developed “Secure Shield,” a cybersecurity platform to help Indian users detect scam messages, URLs, and files,
                 and “Krishi Mitra,” a Hindi-language app supporting farmers with soil testing, weather updates, and market prices.
-                Built and deployed multiple projects using React, Firebase, and Flutter — with frontend hosting via Netlify and
+                Built and deployed multiple projects using React, MUI & Firebase — with frontend hosting via Netlify and
                 DNS routing handled through Cloudflare. Recently started contributing to open-source and working on mobile-focused
                 solutions and UI clones like a dark-themed calculator.
               </Typography>
