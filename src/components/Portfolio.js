@@ -35,7 +35,7 @@ const bio = {
   description: (
     <>
       👨‍💻 Computer Science student passionate about modern web development.<br />
-      🚀 This website highlights projects I’ve built using React, Node.js, and other tools I’m exploring.
+      🚀 This website highlights projects I’ve built using React, MUI, and other tools I’m exploring.
     </>
   ),
   avatar: pfp
