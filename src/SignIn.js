@@ -20,7 +20,7 @@ import { GoogleIcon} from './components/CustomIcons-in';
 import { Link as RouterLink, useNavigate } from 'react-router-dom'; // Import useNavigate
 import MuiLink from '@mui/material/Link'; // Import MUI Link as MuiLink
 import { auth } from './firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -95,6 +95,17 @@ export default function SignIn(props) {
     } catch (error) {
       console.error('Error signing in:', error);
       setPasswordErrorMessage('Invalid email or password.');
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      navigate('/portfolio');
+    } catch (error) {
+      console.error('Error signing in with Google:', error);
+      setPasswordErrorMessage(error.message);
     }
   };
 
@@ -214,7 +225,7 @@ export default function SignIn(props) {
             <Button
               fullWidth
               variant="outlined"
-              onClick={() => alert('Sign in with Google')}
+              onClick={handleGoogleSignIn}
               startIcon={<GoogleIcon />}
             >
               Sign in with Google

@@ -15,10 +15,10 @@ import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import AppTheme from './shared-theme/AppTheme'; // Corrected path
 import ColorModeSelect from './shared-theme/ColorModeSelect'; // Corrected path
-import { GoogleIcon, FacebookIcon } from './components/CustomIcons-up'; // Assuming CustomIcons-up.js
+import { GoogleIcon } from './components/CustomIcons-up'; // Assuming CustomIcons-up.js
 import { Link as RouterLink, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { auth } from './firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -126,6 +126,17 @@ export default function SignUp(props) {
     }
   };
 
+  const handleGoogleSignUp = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      navigate('/portfolio');
+    } catch (error) {
+      console.error('Error signing up with Google:', error);
+      setPasswordErrorMessage(error.message);
+    }
+  };
+
   return (
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
@@ -211,7 +222,7 @@ export default function SignUp(props) {
             <Button
               fullWidth
               variant="outlined"
-              onClick={() => alert('Sign up with Google')}
+              onClick={handleGoogleSignUp}
               startIcon={<GoogleIcon />}
             >
               Sign up with Google
