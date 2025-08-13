@@ -15,7 +15,7 @@ import ColorModeIconDropdown from '../shared-theme/ColorModeIconDropdown';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import pfp from './pfp.png';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -35,18 +35,13 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function AppAppBar() {
   const [open, setOpen] = React.useState(false);
-  const location = useLocation();
+  
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
 
-  const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  
 
   return (
     <AppBar

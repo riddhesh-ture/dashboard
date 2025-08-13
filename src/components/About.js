@@ -7,16 +7,41 @@ import AppTheme from '../shared-theme/AppTheme';
 import Footer from './Footer';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
+import { styled } from '@mui/material/styles';
+
+const AboutContainer = styled(Container)(({ theme }) => ({
+  minHeight: '100dvh',
+  padding: theme.spacing(2),
+  paddingTop: theme.spacing(12),
+  [theme.breakpoints.up('sm')]: {
+    padding: theme.spacing(4),
+    paddingTop: theme.spacing(12),
+  },
+  '&::before': {
+    content: '""',
+    display: 'block',
+    position: 'fixed',
+    zIndex: -1,
+    inset: 0,
+    backgroundImage:
+      'radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))',
+    backgroundRepeat: 'no-repeat',
+    ...theme.applyStyles('dark', {
+      backgroundImage:
+        'radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))',
+    }),
+  },
+}));
 
 export default function About(props) {
   return (
     <AppTheme {...props}>
       <>
         <CssBaseline enableColorScheme />
-        <Container
+        <AboutContainer
           maxWidth="lg"
           component="main"
-          sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
+          sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}
         >
           <Alert severity="info">
             <AlertTitle>Under Construction</AlertTitle>
@@ -32,14 +57,11 @@ export default function About(props) {
                 A second-year CSE student at VIT Pune focused on building privacy-aware and locally impactful tech tools.
                 Developed “Secure Shield,” a cybersecurity platform to help Indian users detect scam messages, URLs, and files,
                 and “Krishi Mitra,” a Hindi-language app supporting farmers with soil testing, weather updates, and market prices.
-                Built and deployed multiple projects using React, MUI & Firebase — with frontend hosting via Netlify and
-                DNS routing handled through Cloudflare. Recently started contributing to open-source and working on mobile-focused
-                solutions and UI clones like a dark-themed calculator.
+                I am eager to apply my skills in real-world projects and contribute to innovative solutions.
               </Typography>
-
             </CardContent>
           </Card>
-        </Container>
+        </AboutContainer>
         <Footer />
       </>
     </AppTheme>
