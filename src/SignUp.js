@@ -15,8 +15,10 @@ import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import AppTheme from './shared-theme/AppTheme'; // Corrected path
 import ColorModeSelect from './shared-theme/ColorModeSelect'; // Corrected path
-import { GoogleIcon, FacebookIcon} from './components/CustomIcons-up'; // Assuming CustomIcons-up.js
-import { Link as RouterLink } from 'react-router-dom'; // Import RouterLink
+import { GoogleIcon, FacebookIcon } from './components/CustomIcons-up'; // Assuming CustomIcons-up.js
+import { Link as RouterLink, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { auth } from './firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -68,6 +70,7 @@ export default function SignUp(props) {
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
   const [nameError, setNameError] = React.useState(false); // Assuming 'name' is for Full Name
   const [nameErrorMessage, setNameErrorMessage] = React.useState('');
+  const navigate = useNavigate();
 
   const validateInputs = () => {
     const email = document.getElementById('email');
@@ -106,19 +109,21 @@ export default function SignUp(props) {
     return isValid;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
     if (!validateInputs()) { // Validate inputs before logging
       return;
     }
     const data = new FormData(event.currentTarget);
-    console.log({
-      name: data.get('name'),
-      // lastName: data.get('lastName'), // If you have a separate last name field
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-    // Add your sign-up logic here (e.g., API call)
+    const email = data.get('email');
+    const password = data.get('password');
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate('/portfolio');
+    } catch (error) {
+      console.error('Error signing up:', error);
+      setPasswordErrorMessage(error.message);
+    }
   };
 
   return (
@@ -211,14 +216,7 @@ export default function SignUp(props) {
             >
               Sign up with Google
             </Button>
-            <Button
-              fullWidth
-              variant="outlined"
-              onClick={() => alert('Sign up with Facebook')}
-              startIcon={<FacebookIcon />}
-            >
-              Sign up with Facebook
-            </Button>
+            
             <Typography sx={{ textAlign: 'center' }}>
               Already have an account?{' '}
               <RouterLink to="/signin" style={{ textDecoration: 'none' }}>

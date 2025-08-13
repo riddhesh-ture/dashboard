@@ -16,9 +16,11 @@ import { styled } from '@mui/material/styles';
 import ForgotPassword from './components/ForgotPassword';
 import AppTheme from './shared-theme/AppTheme';
 import ColorModeSelect from './shared-theme/ColorModeSelect';
-import { GoogleIcon, FacebookIcon } from './components/CustomIcons-in';
+import { GoogleIcon} from './components/CustomIcons-in';
 import { Link as RouterLink, useNavigate } from 'react-router-dom'; // Import useNavigate
 import MuiLink from '@mui/material/Link'; // Import MUI Link as MuiLink
+import { auth } from './firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -79,21 +81,21 @@ export default function SignIn(props) {
     setOpen(false);
   };
 
-  const handleSubmit = (event) => {
-    console.log('handleSubmit called'); // <-- Add this log
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const isValid = validateInputs();
-    console.log('validateInputs returned:', isValid); // <-- Add this log
-    if (!isValid) {
+    if (!validateInputs()) {
       return;
     }
     const data = new FormData(event.currentTarget);
-    console.log('Form data:', { // <-- Add this log
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-    console.log('Attempting to navigate to /blog'); // <-- Add this log
-    navigate('/blog');
+    const email = data.get('email');
+    const password = data.get('password');
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/portfolio');
+    } catch (error) {
+      console.error('Error signing in:', error);
+      setPasswordErrorMessage('Invalid email or password.');
+    }
   };
 
   const validateInputs = () => {
@@ -217,14 +219,7 @@ export default function SignIn(props) {
             >
               Sign in with Google
             </Button>
-            <Button
-              fullWidth
-              variant="outlined"
-              onClick={() => alert('Sign in with Facebook')}
-              startIcon={<FacebookIcon />}
-            >
-              Sign in with Facebook
-            </Button>
+            
             <Typography sx={{ textAlign: 'center' }}>
               Don&apos;t have an account?{' '}
               <RouterLink to="/signup" style={{ textDecoration: 'none' }}>

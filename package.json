@@ -7,7 +7,6 @@
     "riddhesh",
     "ture"
   ],
-  
   "bugs": {
     "url": "https://github.com/riddhesh-ture/dashboard/issues"
   },
@@ -17,7 +16,6 @@
   },
   "license": "ISC",
   "author": "riddhesh",
-  
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
@@ -34,13 +32,13 @@
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^14.5.2",
+    "firebase": "^12.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^4.2.0"
   },
-  "devDependencies": {},
   "eslintConfig": {
     "extends": [
       "react-app",
